@@ -8,26 +8,60 @@ from logging.handlers import RotatingFileHandler
 load_dotenv()
 
 #Bot token @Botfather
+
+# Telegram Bot Token
 TG_BOT_TOKEN = os.environ.get("6575853231:AAGAnr-5Aa4HeWzG92GtAivIW4fnl2c5kOQ")
+if not TG_BOT_TOKEN:
+    raise ValueError("Environment variable 'TG_BOT_TOKEN' is not set.")
 
-#Your API ID from my.telegram.org
-APP_ID = int(os.environ.get("29788419"))
+# Your API ID from my.telegram.org
+APP_ID = os.environ.get("29788419")
+if APP_ID is None:
+    raise ValueError("Environment variable 'APP_ID' is not set.")
+try:
+    APP_ID = int(APP_ID)
+except ValueError:
+    raise ValueError("Environment variable 'APP_ID' must be a valid integer.")
 
-#Your API Hash from my.telegram.org
+# Your API Hash from my.telegram.org
 API_HASH = os.environ.get("64889bdac00a24eabcb02811da11a4f6")
+if not API_HASH:
+    raise ValueError("Environment variable 'API_HASH' is not set.")
 
-#Your db channel Id
-CHANNEL_ID = int(os.environ.get("-1001610809402"))
+# Your db channel ID
+CHANNEL_ID = os.environ.get("-1001610809402")
+if CHANNEL_ID is None:
+    raise ValueError("Environment variable 'CHANNEL_ID' is not set.")
+try:
+    CHANNEL_ID = int(CHANNEL_ID)
+except ValueError:
+    raise ValueError("Environment variable 'CHANNEL_ID' must be a valid integer.")
 
-#OWNER ID
-OWNER_ID = int(os.environ.get("6960629549"))
+# Owner ID
+OWNER_ID = os.environ.get("6960629549")
+if OWNER_ID is None:
+    raise ValueError("Environment variable 'OWNER_ID' is not set.")
+try:
+    OWNER_ID = int(OWNER_ID)
+except ValueError:
+    raise ValueError("Environment variable 'OWNER_ID' must be a valid integer.")
 
-#Port
+# Port (default to 8080)
 PORT = os.environ.get("PORT", "8080")
+try:
+    PORT = int(PORT)
+except ValueError:
+    raise ValueError("Environment variable 'PORT' must be a valid integer.")
 
-#Database 
+# Database URI
 DB_URI = os.environ.get("mongodb+srv://er4orkofficial:L1UZfWek0WzIe64B@cluster0.tuupc.mongodb.net/er4orfiledb?retryWrites=true&w=majority")
+if not DB_URI:
+    raise ValueError("Environment variable 'DB_URI' is not set.")
+
+# Database Name
 DB_NAME = os.environ.get("er4orfiledb")
+if not DB_NAME:
+    raise ValueError("Environment variable 'DB_NAME' is not set.")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
