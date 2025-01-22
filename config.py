@@ -8,26 +8,26 @@ from logging.handlers import RotatingFileHandler
 load_dotenv()
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
+TG_BOT_TOKEN = os.environ.get("6575853231:AAGAnr-5Aa4HeWzG92GtAivIW4fnl2c5kOQ")
 
 #Your API ID from my.telegram.org
-APP_ID = int(os.environ.get("APP_ID"))
+APP_ID = os.environ.get(29788419)
 
 #Your API Hash from my.telegram.org
-API_HASH = os.environ.get("API_HASH")
+API_HASH = os.environ.get("64889bdac00a24eabcb02811da11a4f6")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID"))
+CHANNEL_ID = os.environ.get(-1001610809402)
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID"))
+OWNER_ID = (os.environ.get(6960629549)
 
 #Port
 PORT = os.environ.get("PORT", "8080")
 
 #Database 
-DB_URI = os.environ.get("DATABASE_URL")
-DB_NAME = os.environ.get("DATABASE_NAME")
+DB_URI = os.environ.get("mongodb+srv://er4orkofficial:L1UZfWek0WzIe64B@cluster0.tuupc.mongodb.net/er4orfiledb?retryWrites=true&w=majority")
+DB_NAME = os.environ.get("er4orfiledb")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
